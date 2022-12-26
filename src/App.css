@@ -1,0 +1,164 @@
+* {
+  color: azure;
+  /* background-color: rgb(21, 20, 28); */
+  background: black;
+}
+
+h1 {
+  text-shadow: 1px 0px 4px #0d7cac, 2px 0px 4px #0e6e9d, 3px 0px 4px #0a61ad, 2px 0px 3px #0b64c2, 2px 3px 15px #054b89, 2px 0px 15px, 5px 0px 125px, 20px 0vw 200px #0c81d5,40px 0vw 200px #0382cc;
+}
+
+.App {
+  text-align: center;
+}
+
+.ideas-container {
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* display: grid;
+  grid-template-columns: repeat(3, 1fr); */
+  grid-gap: 20px;
+}
+
+.card {
+  /* align-self: center; */
+  min-width: 250px;
+  max-width: 250px;
+  box-sizing: border-box;
+  padding: 10px;
+  border: 1px solid rgba(81, 203, 238, 1);
+  text-shadow: 0 0 2px #fff, 0 0 1px #fff, 0 0 2px #0073e6, 0 0 10px #0073e6, 0 0 1px #0073e6, 0 0 1px #0073e6, 0 0 2px #0073e6;
+}
+
+/* form, p, h1 { 
+  position: sticky;
+  z-index: 1;
+} */
+
+input {
+  font-size: large;
+  width: 200px;
+  height: 25px;
+  border-radius: 10px;
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  outline: none;
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid #DDDDDD;
+}
+
+input:focus,
+textarea:focus {
+  box-shadow: 0 0 25px rgba(81, 203, 238, 1);
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid rgba(81, 203, 238, 1);
+  /* Hex #51CBEE*/
+}
+
+input::placeholder {
+  margin-left: 29px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form > button {
+  width: 150px;
+  height: 25px;
+  border-radius: 10px;
+  box-shadow: 0 0 25px rgba(81, 203, 238, 1);
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid rgba(81, 203, 238, 1);
+}
+
+img {
+  margin-top: -199px;
+  z-index: -1;
+  height: 100vh;
+  width: 99%;
+  border: 1px solid rgb(21, 20, 28);
+}
+
+.name {
+  font-size: 50px;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  text-shadow: 01px 0px 20px rgb(255, 255, 255), 2px 0px 4px #fff, 13px 0px 4px #0073e6, 2px 0px 3px #0073e6, 62px 3px 25px #0073e6, 5px 0px 125px, 40px 0vw 200px #0073e6, 40px 0vw 200px#0073e6;
+  /* text-shadow: 1px 0px 4px #FFD5FF, 2px 0px 4px #FFD5FF, 3px 0px 4px #FFD5FF, 2px 0px 3px #D42CCA, 2px 3px 15px #D42CCA, 2px 0px 15px, 5px 0px 125px, 20px 0vw 200px #D42CCA,40px 0vw 200px #D42CCA; */
+
+  animation: flicker 4s linear infinite;
+  font-weight: 400;
+  letter-spacing: 7px;
+}
+
+.first {
+  animation: flicker 5s linear infinite;
+}
+
+.last {
+  animation: flicker 4s linear infinite;
+}
+
+@keyframes flicker {
+
+  0%,
+  19.999%,
+  22%,
+  62.999%,
+  64%,
+  64.999%,
+  70%,
+  100% {
+    //text-shadow: none;
+    opacity: .99;
+
+  }
+
+  20%,
+  21.999%,
+  63%,
+  63.999%,
+  65%,
+  69.999% {
+    opacity: 0.4;
+  }
+}
+
+.trash-button {
+  font-size: large;
+  width: 100px;
+  height: 25px;
+  border-radius: 2px;
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  outline: none;
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid rgba(81, 203, 238, 1);
+}
+
+.trash-button:hover {
+  font-size: large;
+  width: 200px;
+  height: 25px;
+  border-radius: 2px;
+  box-shadow: 0 0 25px rgba(81, 203, 238, 1);
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid rgba(81, 203, 238, 1);
+  /* Hex #51CBEE*/
+
+}
