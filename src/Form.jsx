@@ -12,6 +12,7 @@ export const Form = ({addIdea, addData}) => {
   const handleChange = (e) => {
     e.preventDefault();
     const newIdea = ({id: Date.now(), title, description})
+    addIdea(newIdea)
     addData(newIdea)
       setLoading(true)
     setSubmitted(true)
