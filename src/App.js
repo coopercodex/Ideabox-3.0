@@ -5,9 +5,9 @@ import { Form } from './Form';
 
 function App() {
   const [ideas, setIdeas] = useState([
-    {id: 1, title: 'Sweaters for pugs', description: 'To keep them warm'},
-    {id: 2, title: 'A romcom', description: 'But make it ghosts'},
-    {id: 3, title: 'A game show called Ether/Or', description: 'When you lose you get chloroformed'},
+    // {id: 1, title: 'Sweaters for pugs', description: 'To keep them warm'},
+    // {id: 2, title: 'A romcom', description: 'But make it ghosts'},
+    // {id: 3, title: 'A game show called Ether/Or', description: 'When you lose you get chloroformed'},
   ])
 
   useEffect(() => {
@@ -20,8 +20,12 @@ function App() {
 
   const deleteIdea = (id) => {
     const filterIdeas = ideas.filter(idea => idea.id !== id)
-    setIdeas(filterIdeas)
+    fetch(`http://localhost:3001/api/v1/ideas/${id}`, {
+      method: 'DELETE',
+    })
+    .then(() => setIdeas(filterIdeas))
   }
+  
   const getData = () => {
     fetch('http://localhost:3001/api/v1/ideas')
     .then(res => res.json())
@@ -30,11 +34,11 @@ function App() {
     }))
   }
 
-  const addData = (newUrl) => {
+  const addData = (newIdea) => {
     fetch('http://localhost:3001/api/v1/ideas', {
     method: 'POST',
     headers: {"Content-Type": "application/json"},
-    body: JSON.stringify(newUrl)
+    body: JSON.stringify(newIdea)
   })
   .then(res => res.json())
   .then(res => setIdeas([...ideas, res]))
