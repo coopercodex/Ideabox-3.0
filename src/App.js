@@ -20,13 +20,13 @@ function App() {
 
   const deleteIdea = (id) => {
     const filterIdeas = ideas.filter(idea => idea.id !== id)
-    fetch(`http://localhost:3001/api/v1/ideas/${id}`, {
+    fetch(`https://ideabox-api2-ire3d3xtc-coopercodex.vercel.app/api/v1/ideas/${id}`, {
       method: 'DELETE',
     })
     .then(() => setIdeas(filterIdeas))
   }
   const getData = () => {
-    fetch('http://localhost:3001/api/v1/ideas')
+    fetch('https://ideabox-api2-ire3d3xtc-coopercodex.vercel.app/api/v1/ideas')
     .then(res => res.json())
     .then((data => {
       setIdeas(data)
@@ -34,7 +34,7 @@ function App() {
   }
 
   const addData = (newIdea) => {
-    fetch('http://localhost:3001/api/v1/ideas', {
+    fetch('https://ideabox-api2-ire3d3xtc-coopercodex.vercel.app/api/v1/ideas', {
     method: 'POST',
     headers: {"Content-Type": "application/json"},
     body: JSON.stringify(newIdea)
